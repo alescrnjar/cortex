@@ -19,7 +19,7 @@ if __name__=='__main__':
         database['Sequence'].append(dna)
         database['y'].append(y_train[i_x])
     df=pd.DataFrame(data=database)
-    csvf='./forcortex_newLentiMPRAK562_labels-seed0_random0_25000.csv'
+    csvf='./acgt/forcortex_newLentiMPRAK562_labels-seed0_random0_25000.csv'
     df.to_csv(csvf,sep=',')
 
     #https://github.com/alescrnjar/Minerva_Tests/blob/main/src/Step0_Database_scraper.py

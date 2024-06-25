@@ -12,7 +12,7 @@ _DOWNLOAD_URL = (
 )
 
 def tokenize_acgt_df(data: pd.DataFrame) -> pd.DataFrame:
-    raw_seqs = data["foldx_seq"]
+    raw_seqs = data["Sequence"]
     tokenized_seqs = []
     for seq in raw_seqs:
         tokenized_seqs.append(" ".join(seq))
