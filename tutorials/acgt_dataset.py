@@ -11,7 +11,7 @@ _DOWNLOAD_URL = (
     "dummy"
 )
 
-def tokenize_rfp_df(data: pd.DataFrame) -> pd.DataFrame:
+def tokenize_acgt_df(data: pd.DataFrame) -> pd.DataFrame:
     raw_seqs = data["foldx_seq"]
     tokenized_seqs = []
     for seq in raw_seqs:
@@ -22,11 +22,13 @@ def tokenize_rfp_df(data: pd.DataFrame) -> pd.DataFrame:
 
 class ACGTDataset(DataFrameDataset):
     _name = "acgt"
-    _target = # "rfp_known_structures.csv"
+    _target = "forcortex_newLentiMPRAK562_labels-seed0_random0_25000.csv" # "rfp_known_structures.csv"
     columns = [
-        "tokenized_seq",
-        "foldx_total_energy",
-        "SASA",
+        #"tokenized_seq",
+        #"foldx_total_energy",
+        #"SASA",
+        "Sequence",
+        "y",
     ]
     """
     df['foldx_seq'][0]='LSKHGLTKDMTMKYRMEGCVDGHKFVITGHGNGSPFEGKQTINLCVVEGGPLPFSEDILSAVFNRVFTDYPQGMVDFFKNSCPAGYTWQRSLLFEDGAVCTASADITVSVEENCFYHESKFHGVNFPADGPVMKKMTINWEPCCEKIIPVPRQGILKGDVAMYLLLKDGGRYRCQFDTVYKAKTDSKKMPEWHFIQHKLTREDRSDAKNQKWQLAEHSVASRSALA'
@@ -35,4 +37,4 @@ class ACGTDataset(DataFrameDataset):
 
     def __init__(self, root: str, download: bool = False, download_source: str = _DOWNLOAD_URL, **kwargs):
         super().__init__(root=root, download=download, download_source=download_source, **kwargs)
-        self._data = tokenize_rfp_df(self._data)
+        self._data = tokenize_acgt_df(self._data)
