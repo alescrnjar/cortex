@@ -3,7 +3,8 @@ from collections import OrderedDict
 from dataclasses import dataclass
 from typing import Optional
 
-from cortex.constants import ALIGNMENT_GAP_TOKEN, CANON_AMINO_ACIDS, COMPLEX_SEP_TOKEN, NULL_TOKENS
+#from cortex.constants import ALIGNMENT_GAP_TOKEN, CANON_AMINO_ACIDS, COMPLEX_SEP_TOKEN, NULL_TOKENS
+from cortex.constants import ALIGNMENT_GAP_TOKEN, CANON_AMINO_ACIDS, COMPLEX_SEP_TOKEN, NULL_TOKENS, CANON_NUCLEOTIDES #AC
 from cortex.tokenization._cached_bert_tokenizer import CachedBertTokenizerFast
 
 
@@ -133,4 +134,5 @@ class ProteinSequenceTokenizerFast(CachedBertTokenizerFast):
         exclude_tokens_from_corruption.extend(custom_tokens)
         self.corruption_vocab_excluded = set(exclude_tokens_from_corruption)
 
-        self.chain_tokens = CANON_AMINO_ACIDS + [ALIGNMENT_GAP_TOKEN]
+        #self.chain_tokens = CANON_AMINO_ACIDS + [ALIGNMENT_GAP_TOKEN]
+        self.chain_tokens = CANON_NUCLEOTIDES + [ALIGNMENT_GAP_TOKEN]

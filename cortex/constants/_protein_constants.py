@@ -24,6 +24,8 @@ CANON_AMINO_ACIDS = [
     "Y",
     "V",
 ]
+CANON_NUCLEOTIDES=['A','C','G','T'] #AC
+
 
 VARIABLE_HEAVY_CHAIN_TOKEN = "<vh>"  # Variable heavy chain start token
 VARIABLE_HEAVY_COL = "fv_heavy_aho"  # Aligned VH sequence column in dataframes
