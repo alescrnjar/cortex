@@ -14,3 +14,6 @@ I cannot remove wandb
 28 Jun 2024, 03:04:28 PM auros <br>
 why shape 16,4?
 
+28 Jun 2024, 03:06:28 PM auros <br>
+need to change from protein to ACGT
+
